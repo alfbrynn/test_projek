@@ -3,7 +3,7 @@
         <img alt="Logo E-Tatib" src="/public/img/logo-svg" />
         <button class="btn d-md-none d-block close-btn px-1 py-0 text-dark">
         <i class="fas fa-stream"></i>
-    </button>
+        </button>
     </div>
     <ul class="list-unstyled px-2 py-1">
         <?php echo $_SERVER["REQUEST_URI"] == 'dashboard.php' ? '<li class="active">' : '<li>' ?>
