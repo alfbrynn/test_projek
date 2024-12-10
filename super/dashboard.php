@@ -13,7 +13,7 @@
 </head>
 <body>
   <div class="main-container">
-    <!-- Sidebar -->
+    <!-- Sidebar --> 
     <?php require_once 'sidebar.php'; ?>
     
     <!-- Navbar -->
@@ -118,7 +118,7 @@
       <div class="input-group mb-3 gap-2" >
         <!-- <div class="form-outline" data-mdb-input-init>
               <input type="search" id="form1" class="form-control" placeholder="Search" />
-            </div> -->
+              </div> -->
             <form class="form-inline">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">
@@ -202,6 +202,9 @@
                         </div>
                     </form>
             </div>
+            <div class="form-outline" data-mdb-input-init>
+              <input type="search" id="filter" class="form-control" placeholder="Filter" /> -->
+            </div>
           </div>
       
           <div class="table-responsive mb-2">
@@ -232,7 +235,7 @@
                           data-bs-toggle="modal" data-bs-target="#modalTinjau"><i
                           class="bi bi-eye-fill"></i>
                           Tinjau
-                  </button>                            
+                      </button>
                   </td>
                 </tr>
               </tbody>
@@ -241,8 +244,8 @@
           </div>
     </div>
   </div>
-
-  <div class="modal fade" id="modalTinjau" data-bs-backdrop="static"
+  
+    <div class="modal fade" id="modalTinjau" data-bs-backdrop="static"
         style="background-color: rgba(255, 255, 255, 0.20);" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">

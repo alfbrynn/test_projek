@@ -30,19 +30,19 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data Dosen</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Mahasiswa</li>
                     </ol>
                 </nav>
             </div>
 
             <div class="bg-white">
-                <!-- Button Tambah Dosen -->
+                <!-- Button Tambah Mahasiswa -->
                 <div class="text-start mb-3">
                     <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
-                        Tambah Dosen
+                        Tambah Mahasiswa
                     </button>
                 </div>
-                    <div class="filter-bar d-flex align-items-center gap-2">
+                <div class="filter-bar d-flex align-items-center gap-2">
 
                     <!-- <span><i class="fas fa-filter"></i> Filter</span> -->
 
@@ -54,35 +54,12 @@
                             <input type="text" class="form-control" placeholder="Cari" aria-label="Username"
                                 aria-describedby="basic-addon1">
                             <div class="btn-group">
-                            <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
+                                <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-sliders me-1"></i>
                                     Filter
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right p-4" style="min-width: 300px;">
                                     <form id="filterForm">
-
-                                         <!-- Filter by Date -->
-                                         <div class="mb-3">
-                                            <label for="fromDate" class="form-label">Dari</label>
-                                            <input type="date" id="fromDate" class="form-control">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="toDate" class="form-label">Sampai</label>
-                                            <input type="date" id="toDate" class="form-control">
-                                        </div>
-
-                                        <!-- Filter by Tingkat -->
-                                        <div class="mb-3">
-                                            <label for="tingkat" class="form-label">Tingkat Pelanggaran</label>
-                                            <select id="tingkat" class="form-select">
-                                                <option value="" selected disabled>Pilih Tingkat</option>
-                                                <option value="1">Pelanggaran Tingkat 1</option>
-                                                <option value="2">Pelanggaran Tingkat 2</option>
-                                                <option value="3">Pelanggaran Tingkat 3</option>
-                                                <option value="4">Pelanggaran Tingkat 4</option>
-                                                <option value="4">Pelanggaran Tingkat 5</option>
-                                            </select>
-                                        </div>
 
                                         <!-- Filter by Prodi -->
                                         <div class="mb-3">
@@ -148,7 +125,7 @@
                     <thead>
                         <tr>
                             <th>
-                                NIP
+                                NIM
                             </th>
                             <th>
                                 Nama
@@ -157,10 +134,10 @@
                                 Jenis Kelamin
                             </th>
                             <th>
-                                Jabatan
+                                Kelas
                             </th>
                             <th>
-                                Tanggal Lahir
+                                Prodi
                             </th>
                             <th>
                                 Alamat
@@ -182,13 +159,13 @@
                                 Laki-laki
                             </td>
                             <td>
-                                Dosen Pengajar
+                                2C
                             </td>
                             <td>
-                                28, Februari 1889
+                                TI
                             </td>
                             <td>
-                                Malang
+                                Pasuruan
                             </td>
                             <td>
                                 <button class="btn btn-info btn-sm" data-bs-toggle="modal"
@@ -292,7 +269,7 @@
                                                                 <td>Jenis Kelamin</td>
                                                                 <td>: Laki-laki</td>
                                                             </tr>
-                                                            <tr>
+                                                             <tr>
                                                                 <td>Alamat</td>
                                                                 <td>: Pasuruan</td>
                                                             </tr>
@@ -383,7 +360,9 @@
                                                         </tr>
                                                     </table>
                                                 </div>
+
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -394,69 +373,6 @@
                     </div>
 
                 </div>
-
-                <!-- Add Modal -->
-<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <!-- Modal Header -->
-            <div class="modal-header">
-                <h5 class="modal-title" id="addModalLabel">Tambah Data Dosen</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- Modal Body -->
-            <div class="modal-body">
-                <form id="addDosenForm">
-                    <!-- Input NIP -->
-                    <div class="mb-3">
-                        <label for="nip" class="form-label">NIP</label>
-                        <input type="text" class="form-control" id="nip" name="nip" placeholder="Masukkan NIP" required>
-                    </div>
-                    <!-- Input Nama -->
-                    <div class="mb-3">
-                        <label for="nama" class="form-label">Nama</label>
-                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
-                    </div>
-                    <!-- Input Jenis Kelamin -->
-                    <div class="mb-3">
-                        <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
-                        <select class="form-select" id="jenisKelamin" name="jenisKelamin" required>
-                            <option value="" disabled selected>Pilih Jenis Kelamin</option>
-                            <option value="Laki-laki">Laki-laki</option>
-                            <option value="Perempuan">Perempuan</option>
-                        </select>
-                    </div>
-                    <!-- Input Jabatan -->
-                    <div class="mb-3">
-                        <label for="jabatan" class="form-label">Jabatan</label>
-                        <select class="form-select" id="jabatan" name="jabatan" required>
-                            <option value="" disabled selected>Pilih Jabatan</option>
-                            <option value="Dosen Pengajar">Dosen Pengajar</option>
-                            <option value="DPA">DPA</option>
-                            <option value="KPS">KPS</option>
-                        </select>
-                    </div>
-                    <!-- Input Tanggal Lahir -->
-                    <div class="mb-3">
-                        <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control" id="tanggalLahir" name="tanggalLahir" required>
-                    </div>
-                    <!-- Input Alamat -->
-                    <div class="mb-3">
-                        <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat" required></textarea>
-                    </div>
-                </form>
-            </div>
-            <!-- Modal Footer -->
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-                <button type="submit" class="btn btn-success" form="addDosenForm">Simpan</button>
-            </div>
-        </div>
-    </div>
-</div>
-
 
                 <!-- Modal edit data mahasiswa -->
                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -475,7 +391,7 @@
                                         <div class="row mb-3">
                                             <label for="" class="col-sm-3 col-form-label text-end fw-bold">NIM</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="2541987544">
+                                                <input type="text" class="form-control" value="2541987544" readonly disabled>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -525,13 +441,16 @@
                                         <button type="button" class="btn-detail" onclick="confirmSave()">Save
                                             changes</button>
                                     </div>
+
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <!-- Modal tambah data mahasiswa -->
-                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true" data-bs-backdrop="static" style="background-color: rgba(255, 255, 255, 0.20);">
+                <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true" data-bs-backdrop="static" style="background-color: rgba(255, 255, 255, 0.20);">
                         <div class="modal-dialog modal-lg modal-dialog-centered">
                             <div class="modal-content" style="background-color: #F5F5F5">
                                 <div class="modal-header">
@@ -597,8 +516,9 @@
                             </div>
                         </div>
                     </div>
-
             </div>
+
+
         </div>
 
         <!-- Scripts -->
@@ -675,7 +595,6 @@
             // Reset form
             document.getElementById('addModal').querySelectorAll('input, select').forEach(input => input.value = '');
         }
-
         </script>
 </body>
 
