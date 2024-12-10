@@ -105,7 +105,7 @@
                                 <thead>
                                     <!-- Button Tambah Informasi Tata Tertib -->
                                     <div class="text-start mb-3">
-                                        <button class="btn btn-success tambah-informasi-btn" data-bs-toggle="modal" data-bs-target="#tambahInformasiModal">
+                                        <button class="btn btn-success tambah-informasi-btn" data-bs-toggle="modal" data-bs-target="#addModal">
                                             Tambah Informasi Tata Tertib
                                         </button>
                                     </div>
@@ -190,12 +190,12 @@
                                     <!-- Tombol Edit dan Lihat -->
                                     <td class="text-center">
                                         <!-- Tombol Edit -->
-                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#lihatModal">
+                                        <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
                                             <i class="fas fa-pencil-alt"></i> <!-- Ikon Edit -->
                                         </button>
 
                                         <!-- Tombol Hapus -->
-                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+                                        <button class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#hapusModal">
                                             <i class="fas fa-trash-alt"></i> <!-- Ikon Hapus -->
                                         </button>
 
@@ -203,7 +203,6 @@
                                 </tr>
                             </tbody>
                         </table>
-
 
                             <table class="table table-bordered table-hover" id="tabel-awal">
                                 <thead>
@@ -330,9 +329,79 @@
                                 </tbody>
                             </table>
 
+
                         </div>
                     </div>
 
+                    <!-- Modal Edit Tata Tertib -->
+<div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background-color: #F5F5F5;">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="editModalLabel">Edit Informasi Tata Tertib</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editForm">
+                    <!-- Input Field untuk Judul -->
+                    <div class="mb-3">
+                        <label for="editJudul" class="form-label fw-bold">Judul Tata Tertib</label>
+                        <input type="text" id="editJudul" class="form-control" placeholder="Masukkan Judul Tata Tertib" value="Akumulasi Sanksi Pelanggaran">
+                    </div>
+
+                    <!-- Textarea untuk Deskripsi Tata Tertib -->
+                    <div class="mb-3">
+                        <label for="editDeskripsi" class="form-label fw-bold">Deskripsi Tata Tertib</label>
+                        <textarea id="editDeskripsi" class="form-control" rows="5">
+Perbuatan / tindakan pelanggaran Tata Tertib Kehidupan Kampus akan diakumulasikan untuk setiap kategori pelanggaran dan berlaku sepanjang mahasiswa masih tercatat sebagai mahasiswa di Polinema.
+                            
+    1. Apabila pelanggaran tingkat V dilakukan 3 (tiga) kali maka klasifikasi pelanggaran tersebut ditingkatkan menjadi pelanggaran tingkat IV.
+    2. Apabila pelanggaran tingkat IV dilakukan 3 (tiga) kali maka klasifikasi pelanggaran tersebut ditingkatkan menjadi pelanggaran tingkat III.
+    3. Apabila pelanggaran tingkat III dilakukan 3 (tiga) kali maka klasifikasi pelanggaran tersebut ditingkatkan menjadi pelanggaran tingkat II.
+    4. Apabila pelanggaran tingkat II dilakukan 3 (tiga) kali maka klasifikasi pelanggaran tersebut ditingkatkan menjadi pelanggaran tingkat I.
+                            
+                        </textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" onclick="saveEditData()">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Tambah Tata Tertib -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background-color: #F5F5F5;">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold" id="addModalLabel">Tambah Informasi Tata Tertib</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="addForm">
+                    <!-- Input Field untuk Judul -->
+                    <div class="mb-3">
+                        <label for="addJudul" class="form-label fw-bold">Judul Tata Tertib</label>
+                        <input type="text" id="addJudul" class="form-control" placeholder="Masukkan Judul Tata Tertib">
+                    </div>
+
+                    <!-- Textarea untuk Deskripsi Tata Tertib -->
+                    <div class="mb-3">
+                        <label for="addDeskripsi" class="form-label fw-bold">Deskripsi Tata Tertib</label>
+                        <textarea id="addDeskripsi" class="form-control" rows="5" placeholder="Masukkan Deskripsi Tata Tertib"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" onclick="saveAddData()">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
 
                     <div class="tab-pane fade" id="klasifikasi" role="tabpanel" aria-labelledby="klasifikasi-tab">
                         <div class="table-responsive my-4">
@@ -392,6 +461,50 @@
             document.getElementById("side_nav").classList.remove("active");
             document.querySelector(".content").classList.remove("sidebar-open");
         });
+
+        // modal edit
+        function saveEditData() {
+        const judul = document.getElementById('editJudul').value;
+        const deskripsi = document.getElementById('editDeskripsi').value;
+
+        if (!judul || !deskripsi) {
+            alert('Judul dan Deskripsi Tata Tertib wajib diisi!');
+            return;
+        }
+
+        // Lakukan logika penyimpanan data (bisa menggunakan AJAX atau langsung ditambahkan ke tabel)
+        console.log("Judul yang diedit:", judul);
+        console.log("Deskripsi yang diedit:", deskripsi);
+
+        // Tutup modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('editModal'));
+        modal.hide();
+
+        // Anda bisa menambahkan kode untuk memperbarui tabel atau menyimpan perubahan di database di sini.
+    }
+
+    function saveAddData() {
+        const judul = document.getElementById('addJudul').value;
+        const deskripsi = document.getElementById('addDeskripsi').value;
+
+        if (!judul || !deskripsi) {
+            alert('Judul dan Deskripsi Tata Tertib wajib diisi!');
+            return;
+        }
+
+        // Lakukan logika penyimpanan data (bisa menggunakan AJAX atau langsung ditambahkan ke tabel)
+        console.log("Judul yang ditambahkan:", judul);
+        console.log("Deskripsi yang ditambahkan:", deskripsi);
+
+        // Tutup modal
+        const modal = bootstrap.Modal.getInstance(document.getElementById('addModal'));
+        modal.hide();
+
+        // Reset form setelah disimpan
+        document.getElementById('addForm').reset();
+
+        // Anda bisa menambahkan kode untuk memperbarui tabel atau menyimpan data di database di sini.
+    }
         </script>
 </body>
 
