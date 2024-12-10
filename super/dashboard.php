@@ -116,11 +116,88 @@
       <div class="bg-white mt-3 p-3">
       <h2 class="h3 mb-3 mt-3 fw-semibold" style="font-size: 24px">Pelanggaran Terbaru</h2>
       <div class="input-group mb-3 gap-2" >
-        <div class="form-outline" data-mdb-input-init>
+        <!-- <div class="form-outline" data-mdb-input-init>
               <input type="search" id="form1" class="form-control" placeholder="Search" />
-            </div>
+            </div> -->
             <div class="form-outline" data-mdb-input-init>
-              <input type="search" id="filter" class="form-control" placeholder="Filter" />
+              <!-- <input type="search" id="filter" class="form-control" placeholder="Filter" /> -->
+              <form class="form-inline">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1">
+                                <i class="fas fa-search"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Cari" aria-label="Username"
+                                aria-describedby="basic-addon1">
+                            <div class="btn-group">
+                                <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false"><i class="bi bi-sliders me-1"></i>
+                                    Filter
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right p-4" style="min-width: 300px;">
+                                    <form id="filterForm">
+                                        <!-- Filter by Date -->
+                                        <div class="mb-3">
+                                            <label for="fromDate" class="form-label">Dari</label>
+                                            <input type="date" id="fromDate" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="toDate" class="form-label">Sampai</label>
+                                            <input type="date" id="toDate" class="form-control">
+                                        </div>
+
+                                        <!-- Filter by Tingkat -->
+                                        <div class="mb-3">
+                                            <label for="tingkat" class="form-label">Tingkat Pelanggaran</label>
+                                            <select id="tingkat" class="form-select">
+                                                <option value="" selected disabled>Pilih Tingkat</option>
+                                                <option value="1">Pelanggaran Tingkat 1</option>
+                                                <option value="2">Pelanggaran Tingkat 2</option>
+                                                <option value="3">Pelanggaran Tingkat 3</option>
+                                                <option value="4">Pelanggaran Tingkat 4</option>
+                                                <option value="4">Pelanggaran Tingkat 5</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Filter by Prodi -->
+                                        <div class="mb-3">
+                                            <label for="prodi" class="form-label">Prodi</label>
+                                            <select id="prodi" class="form-select">
+                                                <option value="" selected disabled>Pilih Prodi</option>
+                                                <option value="TI">Teknik Informatika</option>
+                                                <option value="SI">Sistem Informasi Bisnis</option>
+                                                <option value="TK">PPLS</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Filter by Kelas -->
+                                        <div class="mb-3">
+                                            <label for="kelas" class="form-label">Tingkat Kelas</label>
+                                            <select id="kelas" class="form-select">
+                                                <option value="" selected disabled>Pilih Tingkat Kelas</option>
+                                                <option value="Kelas1">Tingkat 1</option>
+                                                <option value="Kelas2">Tingkat 2</option>
+                                                <option value="Kelas3">Tingkat 3</option>
+                                                <option value="Kelas4">Tingkat 4</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Filter by Kelas -->
+                                        <div class="mb-3">
+                                            <label for="kelas" class="form-label">Kelas</label>
+                                            <select id="kelas" class="form-select">
+                                                <option value="" selected disabled>Pilih Kelas</option>
+                                                <option value="A">Kelas A</option>
+                                                <option value="B">Kelas B</option>
+                                                <option value="C">Kelas C</option>
+                                            </select>
+                                        </div>
+
+                                        <!-- Buttons -->
+                                        <div class="d-flex justify-content-between">
+                                            <button type="reset" class="btn btn-secondary">Reset</button>
+                                            <button type="submit" class="btn-detail">Apply</button>
+                                        </div>
+                                    </form>
             </div>
           </div>
       
@@ -277,7 +354,10 @@
         </div>
     </div>
 </div>
-
+                                </div>
+                            </div>
+                        </div>
+                    </form>
 <script>
     function submitSanksi() {
         alert("Sanksi berhasil dikirim!");

@@ -54,12 +54,35 @@
                             <input type="text" class="form-control" placeholder="Cari" aria-label="Username"
                                 aria-describedby="basic-addon1">
                             <div class="btn-group">
-                                <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
+                            <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-sliders me-1"></i>
                                     Filter
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right p-4" style="min-width: 300px;">
                                     <form id="filterForm">
+
+                                         <!-- Filter by Date -->
+                                         <div class="mb-3">
+                                            <label for="fromDate" class="form-label">Dari</label>
+                                            <input type="date" id="fromDate" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="toDate" class="form-label">Sampai</label>
+                                            <input type="date" id="toDate" class="form-control">
+                                        </div>
+
+                                        <!-- Filter by Tingkat -->
+                                        <div class="mb-3">
+                                            <label for="tingkat" class="form-label">Tingkat Pelanggaran</label>
+                                            <select id="tingkat" class="form-select">
+                                                <option value="" selected disabled>Pilih Tingkat</option>
+                                                <option value="1">Pelanggaran Tingkat 1</option>
+                                                <option value="2">Pelanggaran Tingkat 2</option>
+                                                <option value="3">Pelanggaran Tingkat 3</option>
+                                                <option value="4">Pelanggaran Tingkat 4</option>
+                                                <option value="4">Pelanggaran Tingkat 5</option>
+                                            </select>
+                                        </div>
 
                                         <!-- Filter by Prodi -->
                                         <div class="mb-3">
