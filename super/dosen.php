@@ -9,7 +9,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
-    <link rel="stylesheet" href="/public/css/style-css" />
+    <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet" />
 
@@ -30,13 +30,19 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        <li class="breadcrumb-item active" aria-current="page">Data Dosen</li>
                     </ol>
                 </nav>
             </div>
 
             <div class="bg-white">
-                <div class="filter-bar d-flex align-items-center gap-2">
+                <!-- Button Tambah Dosen -->
+                <div class="text-start mb-3">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
+                        Tambah Dosen
+                    </button>
+                </div>
+                    <div class="filter-bar d-flex align-items-center gap-2">
 
                     <!-- <span><i class="fas fa-filter"></i> Filter</span> -->
 
@@ -48,12 +54,35 @@
                             <input type="text" class="form-control" placeholder="Cari" aria-label="Username"
                                 aria-describedby="basic-addon1">
                             <div class="btn-group">
-                                <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
+                            <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-sliders me-1"></i>
                                     Filter
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right p-4" style="min-width: 300px;">
                                     <form id="filterForm">
+
+                                         <!-- Filter by Date -->
+                                         <div class="mb-3">
+                                            <label for="fromDate" class="form-label">Dari</label>
+                                            <input type="date" id="fromDate" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="toDate" class="form-label">Sampai</label>
+                                            <input type="date" id="toDate" class="form-control">
+                                        </div>
+
+                                        <!-- Filter by Tingkat -->
+                                        <div class="mb-3">
+                                            <label for="tingkat" class="form-label">Tingkat Pelanggaran</label>
+                                            <select id="tingkat" class="form-select">
+                                                <option value="" selected disabled>Pilih Tingkat</option>
+                                                <option value="1">Pelanggaran Tingkat 1</option>
+                                                <option value="2">Pelanggaran Tingkat 2</option>
+                                                <option value="3">Pelanggaran Tingkat 3</option>
+                                                <option value="4">Pelanggaran Tingkat 4</option>
+                                                <option value="4">Pelanggaran Tingkat 5</option>
+                                            </select>
+                                        </div>
 
                                         <!-- Filter by Prodi -->
                                         <div class="mb-3">
@@ -119,7 +148,7 @@
                     <thead>
                         <tr>
                             <th>
-                                NIM
+                                NIP
                             </th>
                             <th>
                                 Nama
@@ -128,10 +157,10 @@
                                 Jenis Kelamin
                             </th>
                             <th>
-                                Kelas
+                                Jabatan
                             </th>
                             <th>
-                                Prodi
+                                Tanggal Lahir
                             </th>
                             <th>
                                 Alamat
@@ -354,9 +383,7 @@
                                                         </tr>
                                                     </table>
                                                 </div>
-
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>
@@ -435,17 +462,80 @@
                                         <button type="button" class="btn-detail" onclick="confirmSave()">Save
                                             changes</button>
                                     </div>
-
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
+                <!-- Modal tambah data mahasiswa -->
+                    <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true" data-bs-backdrop="static" style="background-color: rgba(255, 255, 255, 0.20);">
+                        <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-content" style="background-color: #F5F5F5">
+                                <div class="modal-header">
+                                    <h5 class="modal-title fw-bold" id="addModalLabel">Tambah Data Mahasiswa</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="bg-body-tertiary">
+                                        <div class="form-group">
+                                            <div class="row mb-3">
+                                                <label for="addNim" class="col-sm-3 col-form-label text-end fw-bold">NIM</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="addNim" class="form-control" placeholder="Masukkan NIM">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addNama" class="col-sm-3 col-form-label text-end fw-bold">Nama</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="addNama" class="form-control" placeholder="Masukkan Nama">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addKelas" class="col-sm-3 col-form-label text-end fw-bold">Kelas</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="addKelas" class="form-control" placeholder="Masukkan Kelas">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addProdi" class="col-sm-3 col-form-label text-end fw-bold">Prodi</label>
+                                                <div class="col-sm-9">
+                                                    <input type="text" id="addProdi" class="form-control" placeholder="Masukkan Prodi">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addJenisKelamin" class="col-sm-3 col-form-label text-end fw-bold">Jenis Kelamin</label>
+                                                <div class="col-sm-9">
+                                                    <select id="addJenisKelamin" class="form-control">
+                                                        <option value="" selected disabled>Pilih Jenis Kelamin</option>
+                                                        <option value="Laki-laki">Laki-laki</option>
+                                                        <option value="Perempuan">Perempuan</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addTanggalLahir" class="col-sm-3 col-form-label text-end fw-bold">Tanggal Lahir</label>
+                                                <div class="col-sm-9">
+                                                    <input type="date" id="addTanggalLahir" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="addEmail" class="col-sm-3 col-form-label text-end fw-bold">Email</label>
+                                                <div class="col-sm-9">
+                                                    <input type="email" id="addEmail" class="form-control" placeholder="Masukkan Email">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary" onclick="addData()">Tambah</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
             </div>
-
-
         </div>
 
         <!-- Scripts -->
@@ -486,6 +576,43 @@
                 alert("Perubahan data dibatalkan.");
             }
         }
+
+        // tambah data mahasiswa
+        function addData() {
+            // Ambil nilai dari input field
+            const nim = document.getElementById('addNim').value;
+            const nama = document.getElementById('addNama').value;
+            const kelas = document.getElementById('addKelas').value;
+            const prodi = document.getElementById('addProdi').value;
+            const jenisKelamin = document.getElementById('addJenisKelamin').value;
+            const tanggalLahir = document.getElementById('addTanggalLahir').value;
+            const email = document.getElementById('addEmail').value;
+
+            // Validasi sederhana
+            if (!nim || !nama || !kelas || !prodi || !jenisKelamin || !tanggalLahir || !email) {
+                alert('Semua data wajib diisi!');
+                return;
+            }
+
+            // Lakukan logika penyimpanan data (bisa menggunakan AJAX atau langsung ditambahkan ke tabel)
+            console.log({
+                nim,
+                nama,
+                kelas,
+                prodi,
+                jenisKelamin,
+                tanggalLahir,
+                email
+            });
+
+            // Tutup modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addModal'));
+            modal.hide();
+
+            // Reset form
+            document.getElementById('addModal').querySelectorAll('input, select').forEach(input => input.value = '');
+        }
+
         </script>
 </body>
 
