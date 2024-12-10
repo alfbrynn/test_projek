@@ -29,7 +29,7 @@
     .pagination .page-item.disabled .page-link {
         background-color: lightgray;
         color: gray;
-        border-color: lightgray;
+        border-color: lightgray; 
     }
 
     .pagination .page-link:hover {
