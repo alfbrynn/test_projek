@@ -42,11 +42,11 @@
 
 <body>
     <div class="main-container">
-        <!-- Sidebar -->
-        <php require_once 'sidebar.php'; ?>
-
-        <!-- Navbar -->
-        <php require_once 'navbar.php'; ?>
+       <!-- Sidebar -->
+    <?php require_once 'sidebar.php'; ?>
+    
+    <!-- Navbar -->
+    <?php require_once 'navbar.php'; ?>
 
         <!--Content -->
         <div class="content px-3 pt-3 " style="margin-top: 56px;    ">
