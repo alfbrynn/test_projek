@@ -17,7 +17,7 @@
     <?php require_once 'sidebar.php'; ?>
     
     <!-- Navbar -->
-    <?php require_once 'sidebar.php'; ?>
+    <?php require_once 'navbar.php'; ?>
 
 
     <!-- Dashboard Content -->
