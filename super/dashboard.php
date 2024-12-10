@@ -119,9 +119,7 @@
         <!-- <div class="form-outline" data-mdb-input-init>
               <input type="search" id="form1" class="form-control" placeholder="Search" />
             </div> -->
-            <div class="form-outline" data-mdb-input-init>
-              <!-- <input type="search" id="filter" class="form-control" placeholder="Filter" /> -->
-              <form class="form-inline">
+            <form class="form-inline">
                         <div class="input-group">
                             <span class="input-group-text" id="basic-addon1">
                                 <i class="fas fa-search"></i>
@@ -129,14 +127,15 @@
                             <input type="text" class="form-control" placeholder="Cari" aria-label="Username"
                                 aria-describedby="basic-addon1">
                             <div class="btn-group">
-                                <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
+                            <button type="button" class=" btn dropdown-toggle border" data-bs-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false"><i class="bi bi-sliders me-1"></i>
                                     Filter
                                 </button>
                                 <div class="dropdown-menu dropdown-menu-right p-4" style="min-width: 300px;">
                                     <form id="filterForm">
-                                        <!-- Filter by Date -->
-                                        <div class="mb-3">
+
+                                         <!-- Filter by Date -->
+                                         <div class="mb-3">
                                             <label for="fromDate" class="form-label">Dari</label>
                                             <input type="date" id="fromDate" class="form-control">
                                         </div>
@@ -198,6 +197,10 @@
                                             <button type="submit" class="btn-detail">Apply</button>
                                         </div>
                                     </form>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
             </div>
           </div>
       
