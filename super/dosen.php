@@ -182,13 +182,13 @@
                                 Laki-laki
                             </td>
                             <td>
-                                2C
+                                Dosen Pengajar
                             </td>
                             <td>
-                                TI
+                                28, Februari 1889
                             </td>
                             <td>
-                                Pasuruan
+                                Malang
                             </td>
                             <td>
                                 <button class="btn btn-info btn-sm" data-bs-toggle="modal"
@@ -394,6 +394,69 @@
                     </div>
 
                 </div>
+
+                <!-- Add Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h5 class="modal-title" id="addModalLabel">Tambah Data Dosen</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <!-- Modal Body -->
+            <div class="modal-body">
+                <form id="addDosenForm">
+                    <!-- Input NIP -->
+                    <div class="mb-3">
+                        <label for="nip" class="form-label">NIP</label>
+                        <input type="text" class="form-control" id="nip" name="nip" placeholder="Masukkan NIP" required>
+                    </div>
+                    <!-- Input Nama -->
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama" required>
+                    </div>
+                    <!-- Input Jenis Kelamin -->
+                    <div class="mb-3">
+                        <label for="jenisKelamin" class="form-label">Jenis Kelamin</label>
+                        <select class="form-select" id="jenisKelamin" name="jenisKelamin" required>
+                            <option value="" disabled selected>Pilih Jenis Kelamin</option>
+                            <option value="Laki-laki">Laki-laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                        </select>
+                    </div>
+                    <!-- Input Jabatan -->
+                    <div class="mb-3">
+                        <label for="jabatan" class="form-label">Jabatan</label>
+                        <select class="form-select" id="jabatan" name="jabatan" required>
+                            <option value="" disabled selected>Pilih Jabatan</option>
+                            <option value="Dosen Pengajar">Dosen Pengajar</option>
+                            <option value="DPA">DPA</option>
+                            <option value="KPS">KPS</option>
+                        </select>
+                    </div>
+                    <!-- Input Tanggal Lahir -->
+                    <div class="mb-3">
+                        <label for="tanggalLahir" class="form-label">Tanggal Lahir</label>
+                        <input type="date" class="form-control" id="tanggalLahir" name="tanggalLahir" required>
+                    </div>
+                    <!-- Input Alamat -->
+                    <div class="mb-3">
+                        <label for="alamat" class="form-label">Alamat</label>
+                        <textarea class="form-control" id="alamat" name="alamat" rows="3" placeholder="Masukkan Alamat" required></textarea>
+                    </div>
+                </form>
+            </div>
+            <!-- Modal Footer -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                <button type="submit" class="btn btn-success" form="addDosenForm">Simpan</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
                 <!-- Modal edit data mahasiswa -->
                 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
