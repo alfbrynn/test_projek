@@ -101,7 +101,7 @@
       <div class="row">
         <div class="col-md-8 col-12">
           <div class="biodata">
-            <p class="fw-medium mb-3" style="font-size: 20px">Statistik Data Pelanggaran</p>
+            <p class="fw-medium mb-3" style="font-size: 20px">Statistik Data Pelanggaran </p>
             <div id="myPlot" style="width:100%;max-width:100%"></div>
           </div>
         </div>
@@ -146,8 +146,12 @@
                   <td>19/11/2024</td>
                   <td>Melakukan tindakan asusila</td>
                   <td>1</td>
-                  <td>19/11/2024</td>
-                  <td><button class="btn-detail" data-bs-toggle="modal" data-bs-target="#exampleModal">Lihat Detail</button></td>
+                  <td>menghina rektor</td>
+                  <td>
+                      <button class="btn-detail btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                          <i class="fas fa-eye"></i> Tinjau
+                      </button>
+                  </td>
                 </tr>
               </tbody>
             </table>

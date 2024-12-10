@@ -38,7 +38,7 @@
             <div class="bg-white">
                 <!-- Button Tambah Admin -->
                 <div class="text-start mb-3">
-                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#tambahAdminModal">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal">
                         Tambah Admin
                     </button>
                 </div>
@@ -125,7 +125,7 @@
                     <thead>
                         <tr>
                             <th>
-                                NIM
+                                NIP
                             </th>
                             <th>
                                 Nama
@@ -134,10 +134,10 @@
                                 Jenis Kelamin
                             </th>
                             <th>
-                                Kelas
+                                Email
                             </th>
                             <th>
-                                Prodi
+                                Tempat, Tanggal Lahir
                             </th>
                             <th>
                                 Alamat
@@ -150,7 +150,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                2341720015
+                                1234652783726
                             </td>
                             <td>
                                 Yudi Setiawan
@@ -159,10 +159,10 @@
                                 Laki-laki
                             </td>
                             <td>
-                                2C
+                                Yudisetiawan@gmail.com
                             </td>
                             <td>
-                                TI
+                                Malang, 28 Februari 1899
                             </td>
                             <td>
                                 Pasuruan
@@ -374,84 +374,144 @@
 
                 </div>
 
-                <!-- Modal edit data mahasiswa -->
-                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                    aria-hidden="true" data-bs-backdrop="static" style="background-color: rgba(255, 255, 255, 0.20);">
+                <!-- Modal Edit Data Admin -->
+                <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true" data-bs-backdrop="static">
                     <div class="modal-dialog modal-lg modal-dialog-centered">
-                        <div class="modal-content" style="background-color: #F5F5F5">
+                        <div class="modal-content" style="background-color: #F5F5F5;">
                             <div class="modal-header">
-                                <h5 class="modal-title fw-bold" id="exampleModalLabel">Edit Data Mahasiswa</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                    aria-label="Close"></button>
+                                <h5 class="modal-title fw-bold" id="editModalLabel">Edit Data Admin</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                <div class="bg-body-tertiary">
-
-                                    <div class="form-group">
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">NIM</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="2541987544">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Nama</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="aseppppppp">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Kelas</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="2E">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Prodi</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="Teknik Informatika">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Jenis
-                                                Kelamin</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="Laki-laki">
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Tanggal
-                                                Lahir</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="28 Februari 2024"
-                                                    readonly>
-                                            </div>
-                                        </div>
-                                        <div class="row mb-3">
-                                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Email</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" class="form-control" value="naed@example.com"
-                                                    readonly>
-                                            </div>
+                                <div class="form-group">
+                                    <!-- NIP -->
+                                    <div class="row mb-3">
+                                        <label for="editNip" class="col-sm-3 col-form-label text-end fw-bold">NIP</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="editNip" value="1234652783726" readonly disabled>
                                         </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="button" class="btn-detail" onclick="confirmSave()">Save
-                                            changes</button>
+                                    <!-- Nama -->
+                                    <div class="row mb-3">
+                                        <label for="editNama" class="col-sm-3 col-form-label text-end fw-bold">Nama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="editNama" value="Yudi Setiawan">
+                                        </div>
                                     </div>
-
+                                    <!-- Jenis Kelamin -->
+                                    <div class="row mb-3">
+                                        <label for="editJenisKelamin" class="col-sm-3 col-form-label text-end fw-bold">Jenis Kelamin</label>
+                                        <div class="col-sm-9">
+                                            <select class="form-control" id="editJenisKelamin">
+                                                <option value="Laki-laki" selected>Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="row mb-3">
+                                        <label for="editEmail" class="col-sm-3 col-form-label text-end fw-bold">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="editEmail" value="Yudisetiawan@gmail.com">
+                                        </div>
+                                    </div>
+                                    <!-- Tempat, Tanggal Lahir -->
+                                    <div class="row mb-3">
+                                        <label for="editTtl" class="col-sm-3 col-form-label text-end fw-bold">Tempat, Tanggal Lahir</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" class="form-control" id="editTempat" value="Malang" placeholder="Tempat">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="date" class="form-control" id="editTanggal" value="1899-02-28">
+                                        </div>
+                                    </div>
+                                    <!-- Alamat -->
+                                    <div class="row mb-3">
+                                        <label for="editAlamat" class="col-sm-3 col-form-label text-end fw-bold">Alamat</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" id="editAlamat" rows="3">Pasuruan</textarea>
+                                        </div>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary" onclick="saveAdminChanges()">Save Changes</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-
+                <!-- Modal Tambah Data Admin -->
+                <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true" data-bs-backdrop="static">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content" style="background-color: #F5F5F5;">
+                            <div class="modal-header">
+                                <h5 class="modal-title fw-bold" id="addModalLabel">Tambah Data Admin</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <!-- NIP -->
+                                    <div class="row mb-3">
+                                        <label for="addNip" class="col-sm-3 col-form-label text-end fw-bold">NIP</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="addNip" class="form-control" placeholder="Masukkan NIP">
+                                        </div>
+                                    </div>
+                                    <!-- Nama -->
+                                    <div class="row mb-3">
+                                        <label for="addNama" class="col-sm-3 col-form-label text-end fw-bold">Nama</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" id="addNama" class="form-control" placeholder="Masukkan Nama">
+                                        </div>
+                                    </div>
+                                    <!-- Jenis Kelamin -->
+                                    <div class="row mb-3">
+                                        <label for="addJenisKelamin" class="col-sm-3 col-form-label text-end fw-bold">Jenis Kelamin</label>
+                                        <div class="col-sm-9">
+                                            <select id="addJenisKelamin" class="form-control">
+                                                <option value="" selected disabled>Pilih Jenis Kelamin</option>
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <!-- Email -->
+                                    <div class="row mb-3">
+                                        <label for="addEmail" class="col-sm-3 col-form-label text-end fw-bold">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" id="addEmail" class="form-control" placeholder="Masukkan Email">
+                                        </div>
+                                    </div>
+                                    <!-- Tempat, Tanggal Lahir -->
+                                    <div class="row mb-3">
+                                        <label for="addTtl" class="col-sm-3 col-form-label text-end fw-bold">Tempat, Tanggal Lahir</label>
+                                        <div class="col-sm-5">
+                                            <input type="text" id="addTempat" class="form-control" placeholder="Masukkan Tempat Lahir">
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <input type="date" id="addTanggal" class="form-control">
+                                        </div>
+                                    </div>
+                                    <!-- Alamat -->
+                                    <div class="row mb-3">
+                                        <label for="addAlamat" class="col-sm-3 col-form-label text-end fw-bold">Alamat</label>
+                                        <div class="col-sm-9">
+                                            <textarea id="addAlamat" class="form-control" rows="3" placeholder="Masukkan Alamat"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal Footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" onclick="addData()">Tambah</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-
-
         </div>
 
         <!-- Scripts -->
@@ -492,6 +552,67 @@
                 alert("Perubahan data dibatalkan.");
             }
         }
+
+        function addData() {
+            // Ambil nilai dari input field
+            const nip = document.getElementById('addNip').value;
+            const nama = document.getElementById('addNama').value;
+            const jenisKelamin = document.getElementById('addJenisKelamin').value;
+            const email = document.getElementById('addEmail').value;
+            const tempatLahir = document.getElementById('addTempat').value;
+            const tanggalLahir = document.getElementById('addTanggal').value;
+            const alamat = document.getElementById('addAlamat').value;
+
+            // Validasi sederhana untuk memastikan semua data diisi
+            if (!nip || !nama || !jenisKelamin || !email || !tempatLahir || !tanggalLahir || !alamat) {
+                alert('Semua data wajib diisi!');
+                return;
+            }
+
+            // Simulasi penyimpanan data (misalnya menambahkannya ke tabel admin)
+            console.log({
+                nip,
+                nama,
+                jenisKelamin,
+                email,
+                tempatLahir,
+                tanggalLahir,
+                alamat
+            });
+
+            // Menambahkan data ke tabel admin secara dinamis
+            const table = document.querySelector('table tbody');
+            const newRow = table.insertRow();
+
+            // Menambahkan data ke kolom tabel
+            newRow.innerHTML = `
+                <td>${nip}</td>
+                <td>${nama}</td>
+                <td>${jenisKelamin}</td>
+                <td>${email}</td>
+                <td>${tempatLahir}, ${tanggalLahir}</td>
+                <td>${alamat}</td>
+                <td>
+                    <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                    <button class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editModal">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                    <button class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            `;
+
+            // Tutup modal
+            const modal = bootstrap.Modal.getInstance(document.getElementById('addModal'));
+            modal.hide();
+
+            // Reset form setelah data ditambahkan
+            document.getElementById('addModal').querySelectorAll('input, select, textarea').forEach(input => input.value = '');
+        }
+
         </script>
 </body>
 
