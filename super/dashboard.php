@@ -142,7 +142,7 @@
                 <tr>
                   <td>1</td>
                   <td>12345678</td>
-                  <td>No Name</td>
+                  <td>Oriza Sativa</td>
                   <td>19/11/2024</td>
                   <td>Melakukan tindakan asusila</td>
                   <td>1</td>
