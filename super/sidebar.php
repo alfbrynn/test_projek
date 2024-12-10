@@ -6,8 +6,8 @@
     </button>
     </div>
     <ul class="list-unstyled px-2 py-1">
-        <?php echo $_SERVER["REQUEST_URI"] == '/home' ? '<li class="active">' : '<li>' ?>
-            <a href="/home" class="text-decoration-none px-3 py-3 d-block fw-bold"><i
+        <?php echo $_SERVER["REQUEST_URI"] == 'dashboard.php' ? '<li class="active">' : '<li>' ?>
+            <a href="dashboard.php" class="text-decoration-none px-3 py-3 d-block fw-bold"><i
                 class="fas fa-home"></i> Dashboard</a>
         </li>
         <?php echo $_SERVER["REQUEST_URI"] == '/dataPelanggaran' ? '<li class="active">' : '<li>' ?>
