@@ -148,18 +148,141 @@
                   <td>1</td>
                   <td>menghina rektor</td>
                   <td>
-                      <button class="btn-detail btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                          <i class="fas fa-eye"></i> Tinjau
-                      </button>
+                  <button type="button" id="btnTriggerModal" class="btn-detail"
+                          data-bs-toggle="modal" data-bs-target="#modalTinjau"><i
+                          class="bi bi-eye-fill"></i>
+                          Tinjau
+                  </button>                            
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           </div>
-
     </div>
   </div>
+
+  <div class="modal fade" id="modalTinjau" data-bs-backdrop="static"
+        style="background-color: rgba(255, 255, 255, 0.20);" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Tinjau Pelanggaran</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="bg-body-tertiary">
+                        <div class="form-group">
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">NIM</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="12345678" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Nama</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="Oriza Sativa" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Kelas</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="2E" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Jenis
+                                    Pelanggaran</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="Tingkat 1" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Tingkat</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="Ringan" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Tanggal</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="28 Februari 2024" readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Catatan</label>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" value="Datang terlambat lebih dari 15 menit"
+                                        readonly>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-sm-3 col-form-label text-end fw-bold">Bukti
+                                    Pelanggaran</label>
+                                <div class="col-sm-9">
+                                    <button class="btn btn-success" data-bs-toggle="modal"
+                                        data-bs-target="#buktiModal">Lihat Bukti Pelanggaran</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- berikan sanksi -->
+                <hr class="mt-1 mb-2">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="row mb-3">
+                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Berikan Sanksi</label>
+                            <div class="col-sm-9">
+                                <div class="dropdown">
+                                    <button
+                                        class="btn btn-light dropdown-toggle border d-flex justify-content-between align-items-center col-sm-12"
+                                        type="button" id="dropdownButton" data-bs-toggle="dropdown"
+                                        aria-expanded="false" style=""> Pilih Sanksi
+                                    </button>
+                                    <ul class="dropdown-menu col-sm-12">
+                                        <li><a class="dropdown-item" href="#"
+                                                data-value="Mencuri dalam bentuk apapun"
+                                                onclick="updateProdiDropdown(this)">penggantian kerugian atau penggantian benda/barang semacamnya</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                data-value="Melakukan kecurangan dalam bidang akademik, administratif,dan keuangan"
+                                                onclick="updateProdiDropdown(this)">Melakukan tugas layanan sosial dalam jangka waktu tertentu</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                data-value="Melakukan pemerasan dan/atau penipuan"
+                                                onclick="updateProdiDropdown(this)">Diberikan nilai D pada mata kuliah terkait saat melakukan pelanggaran.</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                data-value="Melakukan pelecehan dan/atau tindakan asusila dalam segala bentuk di dalam dan luar lingkungan kampus polinema"
+                                                onclick="updateProdiDropdown(this)">Dinonaktifkan (Cuti Akademik/ Terminal) selama dua semester</a></li>
+                                        <li><a class="dropdown-item" href="#"
+                                                data-value="Mengikuti organisasi dan atau menyebarkan faham-faham yangdilarang oleh Pemerintah"
+                                                onclick="updateProdiDropdown(this)">Diberhentikan sebagai mahasiswa.</a></li>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <label for="" class="col-sm-3 col-form-label text-end fw-bold">Detail Sanksi</label>
+                            <div class="col-sm-9">
+                                <textarea class="form-control dynamic-width" id="catatanSanksi" rows="3"
+                                    placeholder="Tambahkan catatan detail sanksi yang diberikan"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+                <button type="button" class="btn-detail" style="padding: 6.5px 12px" data-bs-dismiss="modal" onclick="submitSanksi()" >Kirim</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function submitSanksi() {
+        alert("Sanksi berhasil dikirim!");
+    }
+</script>
 
   
 
